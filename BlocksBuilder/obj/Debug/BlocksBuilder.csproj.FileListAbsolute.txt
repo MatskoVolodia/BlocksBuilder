@@ -1,0 +1,10 @@
+C:\vova\CSharp\BlocksBuilder\BlocksBuilder\bin\Debug\BlocksBuilder.exe.config
+C:\vova\CSharp\BlocksBuilder\BlocksBuilder\bin\Debug\BlocksBuilder.exe
+C:\vova\CSharp\BlocksBuilder\BlocksBuilder\bin\Debug\BlocksBuilder.pdb
+C:\vova\CSharp\BlocksBuilder\BlocksBuilder\obj\Debug\BlocksBuilder.csprojResolveAssemblyReference.cache
+C:\vova\CSharp\BlocksBuilder\BlocksBuilder\obj\Debug\BlocksBuilder.BlocksBuilder.resources
+C:\vova\CSharp\BlocksBuilder\BlocksBuilder\obj\Debug\BlocksBuilder.Properties.Resources.resources
+C:\vova\CSharp\BlocksBuilder\BlocksBuilder\obj\Debug\BlocksBuilder.csproj.GenerateResource.Cache
+C:\vova\CSharp\BlocksBuilder\BlocksBuilder\obj\Debug\BlocksBuilder.exe
+C:\vova\CSharp\BlocksBuilder\BlocksBuilder\obj\Debug\BlocksBuilder.pdb
+C:\vova\CSharp\BlocksBuilder\BlocksBuilder\obj\Debug\BlocksBuilder.AboutBox1.resources
