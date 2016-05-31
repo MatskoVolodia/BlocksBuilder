@@ -18,7 +18,8 @@ namespace BlocksBuilder
             this.labelProductName.Text = AssemblyProduct;
             this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
             this.textBoxDescription.Text = AssemblyDescription;
-            this.textBoxDescription.Text += "Throw a blocks with SPACE.  \r\n Actually, that's all :)  \r\n Enjoy!";
+            this.textBoxDescription.Text += "Throw blocks with SPACE.\r\nActually, that's all :)\r\nEnjoy!";
+            this.logoPictureBox.Image = new Bitmap("blocks.png");
         }
 
         #region Assembly Attribute Accessors

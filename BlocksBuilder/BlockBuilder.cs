@@ -24,6 +24,10 @@ namespace BlocksBuilder
         public BlocksBuilder()
         {
             InitializeComponent();
+            System.IO.TextReader highFile = new System.IO.StreamReader("high.v");
+            this.Icon = new Icon("box_blue.ico");
+            highScore = int.Parse(highFile.ReadLine());
+            highLabel.Text = "High Score: " + highScore;
             DoubleBuffered = true;
             newGame.GameOver += () =>
             {
@@ -127,11 +131,14 @@ namespace BlocksBuilder
         }
 
         private void UpdateScores()
-        {   
+        {           
             if (scores > highScore)
             {
                 highScore = scores;
                 highLabel.Text = "High Score: " + highScore;
+                System.IO.TextWriter writeHigh = new System.IO.StreamWriter("high.v");
+                writeHigh.WriteLine(highScore);
+                writeHigh.Close();
             }
         }
     }

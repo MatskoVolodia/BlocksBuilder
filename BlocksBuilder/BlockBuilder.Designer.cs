@@ -73,11 +73,11 @@
             // 
             this.highLabel.AutoSize = true;
             this.highLabel.BackColor = System.Drawing.Color.Transparent;
-            this.highLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.highLabel.ForeColor = System.Drawing.Color.Black;
+            this.highLabel.Font = new System.Drawing.Font("Microsoft JhengHei", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.highLabel.ForeColor = System.Drawing.Color.RoyalBlue;
             this.highLabel.Location = new System.Drawing.Point(510, 71);
             this.highLabel.Name = "highLabel";
-            this.highLabel.Size = new System.Drawing.Size(144, 26);
+            this.highLabel.Size = new System.Drawing.Size(150, 28);
             this.highLabel.TabIndex = 1;
             this.highLabel.Text = "High Score: 0";
             // 
@@ -85,11 +85,12 @@
             // 
             this.yourLabel.AutoSize = true;
             this.yourLabel.BackColor = System.Drawing.Color.Transparent;
-            this.yourLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.yourLabel.ForeColor = System.Drawing.Color.Black;
+            this.yourLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.yourLabel.Font = new System.Drawing.Font("Microsoft JhengHei", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.yourLabel.ForeColor = System.Drawing.Color.RoyalBlue;
             this.yourLabel.Location = new System.Drawing.Point(510, 36);
             this.yourLabel.Name = "yourLabel";
-            this.yourLabel.Size = new System.Drawing.Size(146, 26);
+            this.yourLabel.Size = new System.Drawing.Size(148, 28);
             this.yourLabel.TabIndex = 2;
             this.yourLabel.Text = "Your Score: 0";
             // 
