@@ -94,7 +94,7 @@ namespace BlocksBuilder
 
         public void RaiseSpeed()
         {
-            Direction += 2;
+            Direction += (4 * Math.Sign(Direction));
         }
         public void ResetSpeed()
         {

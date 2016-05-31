@@ -27,12 +27,8 @@ namespace BlocksBuilder
             DoubleBuffered = true;
             newGame.GameOver += () =>
             {
-                if (scores > highScore)
-                {
-                    highScore = scores;
-                    highLabel.Text = "High Score: " + highScore;
-                }
-                scores = 0;
+                UpdateScores();
+                scores = 0;          
                 CleanAll();
                 newGame.CleanAll();
                 newGame.ResetSpeed();
@@ -66,11 +62,7 @@ namespace BlocksBuilder
 
         private void startToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (scores > highScore)
-            {
-                highScore = scores;
-                highLabel.Text = "High Score: " + highScore;
-            }
+            UpdateScores();
             CleanAll();
             newGame.CleanAll();
             newGame.ResetSpeed();
@@ -95,7 +87,7 @@ namespace BlocksBuilder
             blocks[blocks.Count - 1].Invalidate();
             Controls.Add(blocks[blocks.Count - 1]);
         }
-
+        
         private void mainTimer_Tick(object sender, EventArgs e)
         {
             if (blocks.Count == 0) return;
@@ -122,16 +114,25 @@ namespace BlocksBuilder
                 bool temp = newGame.GetUpdate(blocks[blocks.Count - 1].Location.X);
                 if (!temp) return;   
                 CreateNewBlock();
-            }
-            scores++;
-            if (scores % 16 == 0) NewLevel();
-            yourLabel.Text = "Your Score: " + scores.ToString();
+                scores++;
+                if (scores % 16 == 0) NewLevel();
+                yourLabel.Text = "Your Score: " + scores.ToString();
+            }          
         }
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             about = new AboutBox1();
             about.Show();
+        }
+
+        private void UpdateScores()
+        {   
+            if (scores > highScore)
+            {
+                highScore = scores;
+                highLabel.Text = "High Score: " + highScore;
+            }
         }
     }
 }
