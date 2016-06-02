@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Media;
 using System.Windows.Forms;
 
 /// <summary>
@@ -24,13 +25,23 @@ namespace BlocksBuilder
         public BlocksBuilder()
         {
             InitializeComponent();
+            new System.Threading.Thread(() =>
+            {
+                SoundPlayer simpleSound = new SoundPlayer(@"backsound.wav");
+                simpleSound.PlayLooping();
+            }).Start();
             System.IO.TextReader highFile = new System.IO.StreamReader("high.v");
-            this.Icon = new Icon("box_blue.ico");
             highScore = int.Parse(highFile.ReadLine());
             highLabel.Text = "High Score: " + highScore;
             DoubleBuffered = true;
-            newGame.GameOver += () =>
+            newGame.GameOverEvent += () =>
             {
+                new System.Threading.Thread(() =>
+                {
+                    Console.Beep(200, 100);
+                    Console.Beep(100, 100);
+                    Console.Beep(50, 100);
+                }).Start();
                 UpdateScores();
                 scores = 0;          
                 CleanAll();
@@ -40,7 +51,7 @@ namespace BlocksBuilder
             };
 
             // So, here we cut those side of block which is out of previous block
-            newGame.CutItDude += (x, y) =>
+            newGame.CutItDudeEvent += (x, y) =>
             {
                 if (y == true)
                 {
@@ -115,6 +126,7 @@ namespace BlocksBuilder
             if (blocks.Count == 0) return;
             if (e.KeyCode == Keys.Space)
             {
+                new System.Threading.Thread(() => Console.Beep(300, 100)).Start();
                 bool temp = newGame.GetUpdate(blocks[blocks.Count - 1].Location.X);
                 if (!temp) return;   
                 CreateNewBlock();

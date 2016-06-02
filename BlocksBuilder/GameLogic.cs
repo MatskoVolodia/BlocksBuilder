@@ -4,9 +4,9 @@ namespace BlocksBuilder
 {
     class GameLogic
     {
-        public delegate void ShouldBeCutHandler(int cutThisLength, bool normalFromTheLeftSide); 
-        public event ShouldBeCutHandler CutItDude;
-        public event Action GameOver;
+        public delegate void CutDelegate(int cutThisLength, bool normalFromTheLeftSide); 
+        public event CutDelegate CutItDudeEvent;
+        public event Action GameOverEvent;
 
         public int Direction { get; private set; }
 
@@ -68,25 +68,25 @@ namespace BlocksBuilder
             }
             if ((LeftBorder > leftX + CurrentBlockWidth)|| RightBorder < leftX)
             {
-                GameOver();
+                GameOverEvent();
                 return false;
             }
             if (leftX >= LeftBorder)
             { 
-                CutItDude(leftX + CurrentBlockWidth - RightBorder , true);
+                CutItDudeEvent(leftX + CurrentBlockWidth - RightBorder , true);
                 LeftBorder = leftX;
                 if (CurrentBlockWidth == 0)
                 {
-                    GameOver(); return false;
+                    GameOverEvent(); return false;
                 }
                 return true;
             } else
             {           
-                CutItDude(LeftBorder - leftX, false);
+                CutItDudeEvent(LeftBorder - leftX, false);
                 RightBorder = leftX + CurrentBlockWidth;
                 if (CurrentBlockWidth == 0)
                 {
-                    GameOver(); return false;
+                    GameOverEvent(); return false;
                 }
                 return true;
             }
